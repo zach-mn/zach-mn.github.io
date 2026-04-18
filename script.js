@@ -33,3 +33,19 @@ const navObserver = new IntersectionObserver(
 );
 
 sections.forEach((section) => navObserver.observe(section));
+
+// Mobile hamburger menu
+const toggle = document.querySelector('.nav-toggle');
+const navMenu = document.querySelector('.nav-links');
+
+toggle.addEventListener('click', () => {
+  toggle.classList.toggle('active');
+  navMenu.classList.toggle('open');
+});
+
+navMenu.querySelectorAll('a').forEach((link) => {
+  link.addEventListener('click', () => {
+    toggle.classList.remove('active');
+    navMenu.classList.remove('open');
+  });
+});
