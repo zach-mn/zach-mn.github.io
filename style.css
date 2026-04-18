@@ -451,12 +451,12 @@ footer {
     top: 0;
     right: 0;
     bottom: 0;
-    width: 220px;
+    left: 0;
     background: var(--bg);
-    border-left: 1px solid var(--border);
     flex-direction: column;
-    padding: 5rem 2rem 2rem;
-    gap: 1.5rem;
+    align-items: center;
+    justify-content: center;
+    gap: 2rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
     z-index: 105;
