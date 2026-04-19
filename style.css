@@ -99,12 +99,6 @@ nav {
   border: none;
   cursor: pointer;
   padding: 4px;
-  z-index: 110;
-}
-
-.nav-toggle {
-  position: relative;
-  z-index: 10000;
 }
 
 .nav-toggle span {
@@ -448,8 +442,21 @@ footer {
 
 /* ── Mobile ────────────────────────────────────────── */
 @media (max-width: 640px) {
+  nav {
+    backdrop-filter: none;
+    -webkit-backdrop-filter: none;
+    background: var(--bg);
+  }
+
+  .nav-inner {
+    position: static;
+    z-index: auto;
+  }
+
   .nav-toggle {
     display: flex;
+    position: relative;
+    z-index: 10001;
   }
 
   .nav-links {
@@ -465,7 +472,7 @@ footer {
     gap: 2rem;
     transform: translateX(100%);
     transition: transform 0.3s ease;
-    z-index: 9999;
+    z-index: 10000;
   }
 
   .nav-links.open {
