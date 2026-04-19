@@ -64,7 +64,6 @@ a:hover {
 nav {
   position: sticky;
   top: 0;
-  z-index: 100;
   background: var(--nav-bg);
   backdrop-filter: blur(12px);
   -webkit-backdrop-filter: blur(12px);
@@ -72,6 +71,8 @@ nav {
 }
 
 .nav-inner {
+  position: relative;
+  z-index: 100;
   max-width: var(--max-w);
   margin: 0 auto;
   padding: 1rem 1.5rem;
