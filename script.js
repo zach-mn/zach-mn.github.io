@@ -41,11 +41,13 @@ const navMenu = document.querySelector('.nav-links');
 toggle.addEventListener('click', () => {
   toggle.classList.toggle('active');
   navMenu.classList.toggle('open');
+  document.body.classList.toggle('menu-open');
 });
 
 navMenu.querySelectorAll('a').forEach((link) => {
   link.addEventListener('click', () => {
     toggle.classList.remove('active');
     navMenu.classList.remove('open');
+    document.body.classList.remove('menu-open');
   });
 });
