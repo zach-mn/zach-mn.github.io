@@ -11,140 +11,234 @@
   <meta name="twitter:card" content="summary" />
   <meta name="twitter:title" content="Zach — Vibe Coder" />
   <meta name="twitter:description" content="I build things with code, curiosity, and good vibes." />
+  <meta name="theme-color" content="#0b0a08" />
   <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪚</text></svg>" />
   <title>zachmn</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
+  <!-- Custom cursor (desktop only) -->
+  <div class="cursor-dot" aria-hidden="true"></div>
+  <div class="cursor-ring" aria-hidden="true"></div>
+
+  <!-- Scroll progress -->
+  <div class="scroll-progress" aria-hidden="true"></div>
+
   <!-- ── Nav ── -->
   <nav>
     <div class="nav-inner">
-      <a href="#hero" class="nav-logo">zachmn</a>
-      <button class="nav-toggle" aria-label="Toggle menu">
-        <span></span>
+      <a href="#hero" class="nav-logo" data-magnetic>zachmn<span class="logo-dot">.</span></a>
+      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
         <span></span>
         <span></span>
       </button>
       <ul class="nav-links">
-        <li><a href="#about">About</a></li>
-        <li><a href="#projects">Projects</a></li>
-        <li><a href="#skills">Skills</a></li>
-        <li><a href="#contact">Contact</a></li>
+        <li style="--i:0"><a href="#about"><span class="nav-num">01</span>About</a></li>
+        <li style="--i:1"><a href="#projects"><span class="nav-num">02</span>Projects</a></li>
+        <li style="--i:2"><a href="#skills"><span class="nav-num">03</span>Skills</a></li>
+        <li style="--i:3"><a href="#contact"><span class="nav-num">04</span>Contact</a></li>
       </ul>
     </div>
   </nav>
 
   <!-- ── Hero ── -->
   <header class="hero" id="hero">
-    <div class="hero-glow"></div>
-    <h1 class="fade-in">Hey Siri, build website</h1>
-    <p class="hero-sub fade-in">
-      Learning to build with Claude, speeding up work with python, and enjoying the learning process.
-    </p>
-    <div class="hero-links fade-in">
-      <a href="#projects" class="btn btn-primary">See my work</a>
-      <a href="https://github.com/zach-mn" target="_blank" rel="noopener" class="btn btn-ghost">
-        <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-        </svg>
-        GitHub
-      </a>
+    <canvas id="hero-canvas" aria-hidden="true"></canvas>
+    <div class="hero-content">
+      <p class="hero-kicker"><span class="kicker-line"></span>Hello, I'm Zach</p>
+      <h1>
+        <span class="hl-mask"><span class="hl" style="--d:0.15s">I build things with</span></span>
+        <span class="hl-mask"><span class="hl" style="--d:0.27s">code, <em>curiosity</em></span></span>
+        <span class="hl-mask"><span class="hl" style="--d:0.39s">&amp; good vibes<span class="accent-period">.</span></span></span>
+      </h1>
+      <p class="hero-sub">
+        Learning to build with Claude, speeding up work with Python,
+        and enjoying the learning process.
+      </p>
+      <div class="hero-links">
+        <a href="#projects" class="btn btn-primary" data-magnetic>
+          See my work
+          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
+        </a>
+        <a href="https://github.com/zach-mn" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>
+          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
+            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+          </svg>
+          GitHub
+        </a>
+      </div>
+    </div>
+    <div class="hero-scroll-hint" aria-hidden="true">
+      <span>scroll</span>
+      <span class="scroll-line"></span>
     </div>
   </header>
 
   <!-- ── About ── -->
   <section id="about">
-    <p class="section-label fade-in">About</p>
-    <h2 class="fade-in">A little about me</h2>
-    <div class="about-text fade-in">
-      <p>Learning to make stuff with Claude.</p>
+    <div class="section-grid">
+      <div class="section-meta" data-reveal>
+        <span class="section-num">01</span>
+        <span class="section-name">About</span>
+      </div>
+      <div class="section-body">
+        <h2 data-reveal>A little <em>about</em> me</h2>
+        <div class="about-text" data-reveal style="--rd:0.1s">
+          <p>
+            Learning to make stuff with Claude. I'm hands-on with AI tools,
+            Python, and the web — picking things up by building them, one
+            project at a time.
+          </p>
+        </div>
+        <ul class="about-facts" data-reveal style="--rd:0.2s">
+          <li><span class="fact-label">Focus</span>AI-assisted development</li>
+          <li><span class="fact-label">Tools</span>Claude Code · Python · Git</li>
+          <li><span class="fact-label">Status</span>Always learning</li>
+        </ul>
+      </div>
     </div>
   </section>
 
   <!-- ── Projects ── -->
   <section id="projects">
-    <p class="section-label fade-in">Projects</p>
-    <h2 class="fade-in">Things I've built</h2>
-    <div class="projects-grid">
+    <div class="section-grid">
+      <div class="section-meta" data-reveal>
+        <span class="section-num">02</span>
+        <span class="section-name">Projects</span>
+      </div>
+      <div class="section-body">
+        <h2 data-reveal>Things I've <em>built</em></h2>
+        <div class="projects-grid">
 
-      <div class="project-card fade-in">
-        <h3>Kidde Monitor</h3>
-        <p>Python process that polls and captures values from a Kidde air quality sensor for continuous home air quality tracking. Private repo right now, sorry.</p>
-        <div class="project-tags">
-          <span class="tag">Python</span>
-          <span class="tag">IoT</span>
-          <span class="tag">Automation</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/zach-mn/kidde-monitor" target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            Code
-          </a>
+          <article class="project-card" data-reveal data-tilt>
+            <div class="card-spotlight" aria-hidden="true"></div>
+            <div class="card-top">
+              <span class="card-index">P—01</span>
+              <div class="project-links">
+                <a href="https://github.com/zach-mn/kidde-monitor" target="_blank" rel="noopener" aria-label="Kidde Monitor code on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>Kidde Monitor</h3>
+            <p>Python process that polls and captures values from a Kidde air quality sensor for continuous home air quality tracking. Private repo right now, sorry.</p>
+            <div class="project-tags">
+              <span class="tag">Python</span>
+              <span class="tag">IoT</span>
+              <span class="tag">Automation</span>
+            </div>
+          </article>
+
+          <article class="project-card" data-reveal data-tilt style="--rd:0.12s">
+            <div class="card-spotlight" aria-hidden="true"></div>
+            <div class="card-top">
+              <span class="card-index">P—02</span>
+              <div class="project-links">
+                <a href="https://github.com/zach-mn/zach-mn.github.io" target="_blank" rel="noopener" aria-label="zachmn.com code on GitHub">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
+                </a>
+                <a href="https://zachmn.com" target="_blank" rel="noopener" aria-label="zachmn.com live site">
+                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
+                </a>
+              </div>
+            </div>
+            <h3>zachmn.com</h3>
+            <p>My personal portfolio site — built entirely with Claude Code. No frameworks, just hand-tuned HTML, CSS, and JavaScript.</p>
+            <div class="project-tags">
+              <span class="tag">HTML</span>
+              <span class="tag">CSS</span>
+              <span class="tag">JavaScript</span>
+            </div>
+          </article>
+
         </div>
       </div>
-
-      <div class="project-card fade-in">
-        <h3>zachmn.com</h3>
-        <p>My personal portfolio site — minimal, dark-mode-ready, and built entirely with Claude Code. No frameworks, just clean HTML, CSS, and JS.</p>
-        <div class="project-tags">
-          <span class="tag">HTML</span>
-          <span class="tag">CSS</span>
-          <span class="tag">JavaScript</span>
-        </div>
-        <div class="project-links">
-          <a href="https://github.com/zach-mn/zach-mn.github.io" target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-            Code
-          </a>
-          <a href="https://zachmn.com" target="_blank" rel="noopener">
-            <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-            Live
-          </a>
-        </div>
-      </div>
-
     </div>
   </section>
 
   <!-- ── Skills ── -->
   <section id="skills">
-    <p class="section-label fade-in">Skills</p>
-    <h2 class="fade-in">What I work with</h2>
-    <div class="skills-grid fade-in">
-      <div class="skill-item">Claude</div>
-      <div class="skill-item">Claude Code</div>
-      <div class="skill-item">Python</div>
-      <div class="skill-item">AI / LLMs</div>
-      <div class="skill-item">Prompt Engineering</div>
-      <div class="skill-item">HTML & CSS</div>
-      <div class="skill-item">JavaScript</div>
-      <div class="skill-item">Git</div>
-      <div class="skill-item">Vibe Coding</div>
+    <div class="section-grid">
+      <div class="section-meta" data-reveal>
+        <span class="section-num">03</span>
+        <span class="section-name">Skills</span>
+      </div>
+      <div class="section-body">
+        <h2 data-reveal>What I <em>work</em> with</h2>
+      </div>
+    </div>
+    <div class="marquee-wrap" data-reveal style="--rd:0.15s">
+      <div class="marquee">
+        <div class="marquee-track">
+          <span>Claude</span><span class="m-sep">✦</span>
+          <span>Claude Code</span><span class="m-sep">✦</span>
+          <span>Python</span><span class="m-sep">✦</span>
+          <span>AI / LLMs</span><span class="m-sep">✦</span>
+          <span>Prompt Engineering</span><span class="m-sep">✦</span>
+          <span>Claude</span><span class="m-sep">✦</span>
+          <span>Claude Code</span><span class="m-sep">✦</span>
+          <span>Python</span><span class="m-sep">✦</span>
+          <span>AI / LLMs</span><span class="m-sep">✦</span>
+          <span>Prompt Engineering</span><span class="m-sep">✦</span>
+        </div>
+      </div>
+      <div class="marquee marquee-reverse">
+        <div class="marquee-track">
+          <span>HTML &amp; CSS</span><span class="m-sep">✦</span>
+          <span>JavaScript</span><span class="m-sep">✦</span>
+          <span>Git</span><span class="m-sep">✦</span>
+          <span>Automation</span><span class="m-sep">✦</span>
+          <span>Vibe Coding</span><span class="m-sep">✦</span>
+          <span>HTML &amp; CSS</span><span class="m-sep">✦</span>
+          <span>JavaScript</span><span class="m-sep">✦</span>
+          <span>Git</span><span class="m-sep">✦</span>
+          <span>Automation</span><span class="m-sep">✦</span>
+          <span>Vibe Coding</span><span class="m-sep">✦</span>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── Contact ── -->
   <section id="contact">
-    <p class="section-label fade-in">Contact</p>
-    <h2 class="fade-in">Let's connect</h2>
-    <p class="contact-intro fade-in">
-      Have an idea, a question, or just want to say hey? I'm always down to
-      chat.
-    </p>
-    <div class="contact-links fade-in">
-      <a href="https://github.com/zach-mn" target="_blank" rel="noopener" class="contact-link">
-        <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-          <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-        </svg>
-        github.com/zach-mn
-      </a>
+    <div class="section-grid">
+      <div class="section-meta" data-reveal>
+        <span class="section-num">04</span>
+        <span class="section-name">Contact</span>
+      </div>
+      <div class="section-body">
+        <h2 data-reveal>Let's <em>connect</em></h2>
+        <p class="contact-intro" data-reveal style="--rd:0.1s">
+          Have an idea, a question, or just want to say hey?
+          I'm always down to chat.
+        </p>
+        <div class="contact-links" data-reveal style="--rd:0.2s">
+          <a href="https://github.com/zach-mn" target="_blank" rel="noopener" class="contact-link" data-magnetic>
+            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
+              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
+            </svg>
+            <span class="contact-link-text">github.com/zach-mn</span>
+            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+          </a>
+        </div>
+      </div>
     </div>
   </section>
 
   <!-- ── Footer ── -->
   <footer>
-    <p>&copy; 2026 Zach. Built with good vibes.</p>
+    <div class="footer-watermark" aria-hidden="true">zachmn</div>
+    <div class="footer-inner">
+      <p>&copy; 2026 Zach. Built with good vibes.</p>
+      <a href="#hero" class="back-to-top" data-magnetic>
+        Back to top
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+      </a>
+    </div>
   </footer>
 
   <script src="script.js"></script>
