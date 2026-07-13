@@ -3,241 +3,188 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Zach — vibe coder. Personal brand website." />
-  <meta property="og:title" content="Zach — Vibe Coder" />
-  <meta property="og:description" content="I build things with code, curiosity, and good vibes." />
+  <meta name="description" content="Zach — a Minnesota-based builder making practical tools with Python, the web, and AI-assisted development." />
+  <meta property="og:title" content="Zach — zachmn.com" />
+  <meta property="og:description" content="Practical tools, built with code and curiosity." />
   <meta property="og:type" content="website" />
   <meta property="og:url" content="https://zachmn.com" />
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Zach — Vibe Coder" />
-  <meta name="twitter:description" content="I build things with code, curiosity, and good vibes." />
-  <meta name="theme-color" content="#0b0a08" />
-  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'><text y='.9em' font-size='90'>🪚</text></svg>" />
-  <title>zachmn</title>
+  <meta name="twitter:title" content="Zach — zachmn.com" />
+  <meta name="twitter:description" content="Practical tools, built with code and curiosity." />
+  <meta name="theme-color" content="#faf9f5" />
+  <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 100 100'%3E%3Crect width='100' height='100' rx='20' fill='%2323573f'/%3E%3Ctext x='50' y='71' font-family='Georgia,serif' font-size='62' fill='%23faf9f5' text-anchor='middle'%3EZ%3C/text%3E%3C/svg%3E" />
+  <title>Zach — zachmn.com</title>
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-  <link href="https://fonts.googleapis.com/css2?family=Fraunces:ital,opsz,wght@0,9..144,400;0,9..144,500;0,9..144,600;1,9..144,400;1,9..144,500&family=Instrument+Sans:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link href="https://fonts.googleapis.com/css2?family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Schibsted+Grotesk:wght@400;500;600&family=Spline+Sans+Mono:wght@400;500&display=swap" rel="stylesheet" />
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
 
-  <!-- Custom cursor (desktop only) -->
-  <div class="cursor-dot" aria-hidden="true"></div>
-  <div class="cursor-ring" aria-hidden="true"></div>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- Scroll progress -->
-  <div class="scroll-progress" aria-hidden="true"></div>
-
-  <!-- ── Nav ── -->
-  <nav>
-    <div class="nav-inner">
-      <a href="#hero" class="nav-logo" data-magnetic>zachmn<span class="logo-dot">.</span></a>
-      <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
-        <span></span>
-        <span></span>
-      </button>
-      <ul class="nav-links">
-        <li style="--i:0"><a href="#about"><span class="nav-num">01</span>About</a></li>
-        <li style="--i:1"><a href="#projects"><span class="nav-num">02</span>Projects</a></li>
-        <li style="--i:2"><a href="#skills"><span class="nav-num">03</span>Skills</a></li>
-        <li style="--i:3"><a href="#contact"><span class="nav-num">04</span>Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- ── Hero ── -->
-  <header class="hero" id="hero">
-    <canvas id="hero-canvas" aria-hidden="true"></canvas>
-    <div class="hero-content">
-      <p class="hero-kicker"><span class="kicker-line"></span>Hello, I'm Zach</p>
-      <h1>
-        <span class="hl-mask"><span class="hl" style="--d:0.15s">I build things with</span></span>
-        <span class="hl-mask"><span class="hl" style="--d:0.27s">code, <em>curiosity</em></span></span>
-        <span class="hl-mask"><span class="hl" style="--d:0.39s">&amp; good vibes<span class="accent-period">.</span></span></span>
-      </h1>
-      <p class="hero-sub">
-        Learning to build with Claude, speeding up work with Python,
-        and enjoying the learning process.
-      </p>
-      <div class="hero-links">
-        <a href="#projects" class="btn btn-primary" data-magnetic>
-          See my work
-          <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="5" x2="12" y2="19"/><polyline points="19 12 12 19 5 12"/></svg>
-        </a>
-        <a href="https://github.com/zach-mn" target="_blank" rel="noopener" class="btn btn-ghost" data-magnetic>
-          <svg width="15" height="15" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-          </svg>
-          GitHub
-        </a>
-      </div>
-    </div>
-    <div class="hero-scroll-hint" aria-hidden="true">
-      <span>scroll</span>
-      <span class="scroll-line"></span>
+  <!-- ── Header ── -->
+  <header class="site-header">
+    <div class="header-inner">
+      <a href="#top" class="wordmark">zachmn<span class="wordmark-dot">.</span></a>
+      <nav aria-label="Primary">
+        <button class="nav-toggle" aria-label="Toggle menu" aria-expanded="false">
+          <span></span><span></span>
+        </button>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#projects">Projects</a></li>
+          <li><a href="#contact">Contact</a></li>
+        </ul>
+      </nav>
     </div>
   </header>
 
-  <!-- ── About ── -->
-  <section id="about">
-    <div class="section-grid">
-      <div class="section-meta" data-reveal>
-        <span class="section-num">01</span>
-        <span class="section-name">About</span>
+  <main id="main">
+
+    <!-- ── Hero ── -->
+    <section class="hero" id="top">
+      <p class="kicker" data-reveal>Zach · Minnesota, USA</p>
+      <h1 data-reveal style="--rd: 0.08s">
+        Practical tools, built with<br />
+        code <em>&amp;</em> curiosity.
+      </h1>
+      <p class="hero-sub" data-reveal style="--rd: 0.16s">
+        I use Python, the web, and AI&#8209;assisted development to turn
+        everyday problems into working software — learning something
+        new with every build.
+      </p>
+      <div class="hero-actions" data-reveal style="--rd: 0.24s">
+        <a class="btn btn-solid" href="#projects">View projects</a>
+        <a class="btn btn-line" href="https://github.com/zach-mn" target="_blank" rel="noopener">
+          GitHub
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
       </div>
-      <div class="section-body">
-        <h2 data-reveal>A little <em>about</em> me</h2>
-        <div class="about-text" data-reveal style="--rd:0.1s">
+    </section>
+
+    <!-- ── About ── -->
+    <section id="about" class="section">
+      <div class="section-head" data-reveal>
+        <span class="section-num">01</span>
+        <h2>About</h2>
+      </div>
+      <div class="section-cols">
+        <div class="about-text" data-reveal style="--rd: 0.08s">
           <p>
-            Learning to make stuff with Claude. I'm hands-on with AI tools,
-            Python, and the web — picking things up by building them, one
-            project at a time.
+            I'm a self&#8209;taught builder who learns by shipping. Most of my
+            work pairs Python with AI tools like Claude Code to automate
+            tedious things — collecting data, monitoring devices, and
+            making information easier to find.
+          </p>
+          <p>
+            I care about software that quietly does its job: small,
+            reliable tools that solve a real problem and stay out of
+            the way.
           </p>
         </div>
-        <ul class="about-facts" data-reveal style="--rd:0.2s">
-          <li><span class="fact-label">Focus</span>AI-assisted development</li>
-          <li><span class="fact-label">Tools</span>Claude Code · Python · Git</li>
-          <li><span class="fact-label">Status</span>Always learning</li>
-        </ul>
+        <dl class="about-facts" data-reveal style="--rd: 0.16s">
+          <div class="fact">
+            <dt>Focus</dt>
+            <dd>AI&#8209;assisted development &amp; automation</dd>
+          </div>
+          <div class="fact">
+            <dt>Toolbox</dt>
+            <dd>Python · Claude Code · JavaScript · HTML/CSS · Git</dd>
+          </div>
+          <div class="fact">
+            <dt>Currently</dt>
+            <dd>Scraping public land data across all 87 Minnesota counties</dd>
+          </div>
+        </dl>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- ── Projects ── -->
-  <section id="projects">
-    <div class="section-grid">
-      <div class="section-meta" data-reveal>
+    <!-- ── Projects ── -->
+    <section id="projects" class="section">
+      <div class="section-head" data-reveal>
         <span class="section-num">02</span>
-        <span class="section-name">Projects</span>
+        <h2>Projects</h2>
       </div>
-      <div class="section-body">
-        <h2 data-reveal>Things I've <em>built</em></h2>
-        <div class="projects-grid">
+      <ul class="project-list">
 
-          <article class="project-card" data-reveal data-tilt>
-            <div class="card-spotlight" aria-hidden="true"></div>
-            <div class="card-top">
-              <span class="card-index">P—01</span>
-              <div class="project-links">
-                <a href="https://github.com/zach-mn/kidde-monitor" target="_blank" rel="noopener" aria-label="Kidde Monitor code on GitHub">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                </a>
-              </div>
-            </div>
+        <li class="project" data-reveal>
+          <div class="project-main">
+            <h3>County Tax&#8209;Forfeit Scraper</h3>
+            <p>
+              Statewide scanner that gathers tax&#8209;forfeited land listings
+              from Minnesota county websites into one dataset — handling
+              dozens of differently&#8209;built county sites with a single
+              Python pipeline.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li><li>Web scraping</li><li>Data</li>
+            </ul>
+          </div>
+          <span class="project-meta">Private repo</span>
+        </li>
+
+        <li class="project" data-reveal style="--rd: 0.08s">
+          <div class="project-main">
             <h3>Kidde Monitor</h3>
-            <p>Python process that polls and captures values from a Kidde air quality sensor for continuous home air quality tracking. Private repo right now, sorry.</p>
-            <div class="project-tags">
-              <span class="tag">Python</span>
-              <span class="tag">IoT</span>
-              <span class="tag">Automation</span>
-            </div>
-          </article>
+            <p>
+              Long&#8209;running Python process that polls a Kidde air&#8209;quality
+              sensor and records its readings for continuous home
+              air&#8209;quality tracking.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>Python</li><li>IoT</li><li>Automation</li>
+            </ul>
+          </div>
+          <span class="project-meta">Private repo</span>
+        </li>
 
-          <article class="project-card" data-reveal data-tilt style="--rd:0.12s">
-            <div class="card-spotlight" aria-hidden="true"></div>
-            <div class="card-top">
-              <span class="card-index">P—02</span>
-              <div class="project-links">
-                <a href="https://github.com/zach-mn/zach-mn.github.io" target="_blank" rel="noopener" aria-label="zachmn.com code on GitHub">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="currentColor"><path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/></svg>
-                </a>
-                <a href="https://zachmn.com" target="_blank" rel="noopener" aria-label="zachmn.com live site">
-                  <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6"/><polyline points="15 3 21 3 21 9"/><line x1="10" y1="14" x2="21" y2="3"/></svg>
-                </a>
-              </div>
-            </div>
+        <li class="project" data-reveal style="--rd: 0.16s">
+          <div class="project-main">
             <h3>zachmn.com</h3>
-            <p>My personal portfolio site — built entirely with Claude Code. No frameworks, just hand-tuned HTML, CSS, and JavaScript.</p>
-            <div class="project-tags">
-              <span class="tag">HTML</span>
-              <span class="tag">CSS</span>
-              <span class="tag">JavaScript</span>
-            </div>
-          </article>
-
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Skills ── -->
-  <section id="skills">
-    <div class="section-grid">
-      <div class="section-meta" data-reveal>
-        <span class="section-num">03</span>
-        <span class="section-name">Skills</span>
-      </div>
-      <div class="section-body">
-        <h2 data-reveal>What I <em>work</em> with</h2>
-      </div>
-    </div>
-    <div class="marquee-wrap" data-reveal style="--rd:0.15s">
-      <div class="marquee">
-        <div class="marquee-track">
-          <span>Claude</span><span class="m-sep">✦</span>
-          <span>Claude Code</span><span class="m-sep">✦</span>
-          <span>Python</span><span class="m-sep">✦</span>
-          <span>AI / LLMs</span><span class="m-sep">✦</span>
-          <span>Prompt Engineering</span><span class="m-sep">✦</span>
-          <span>Claude</span><span class="m-sep">✦</span>
-          <span>Claude Code</span><span class="m-sep">✦</span>
-          <span>Python</span><span class="m-sep">✦</span>
-          <span>AI / LLMs</span><span class="m-sep">✦</span>
-          <span>Prompt Engineering</span><span class="m-sep">✦</span>
-        </div>
-      </div>
-      <div class="marquee marquee-reverse">
-        <div class="marquee-track">
-          <span>HTML &amp; CSS</span><span class="m-sep">✦</span>
-          <span>JavaScript</span><span class="m-sep">✦</span>
-          <span>Git</span><span class="m-sep">✦</span>
-          <span>Automation</span><span class="m-sep">✦</span>
-          <span>Vibe Coding</span><span class="m-sep">✦</span>
-          <span>HTML &amp; CSS</span><span class="m-sep">✦</span>
-          <span>JavaScript</span><span class="m-sep">✦</span>
-          <span>Git</span><span class="m-sep">✦</span>
-          <span>Automation</span><span class="m-sep">✦</span>
-          <span>Vibe Coding</span><span class="m-sep">✦</span>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ── Contact ── -->
-  <section id="contact">
-    <div class="section-grid">
-      <div class="section-meta" data-reveal>
-        <span class="section-num">04</span>
-        <span class="section-name">Contact</span>
-      </div>
-      <div class="section-body">
-        <h2 data-reveal>Let's <em>connect</em></h2>
-        <p class="contact-intro" data-reveal style="--rd:0.1s">
-          Have an idea, a question, or just want to say hey?
-          I'm always down to chat.
-        </p>
-        <div class="contact-links" data-reveal style="--rd:0.2s">
-          <a href="https://github.com/zach-mn" target="_blank" rel="noopener" class="contact-link" data-magnetic>
-            <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
-              <path d="M12 2C6.477 2 2 6.477 2 12c0 4.418 2.865 8.166 6.839 9.489.5.092.682-.217.682-.482 0-.237-.009-.868-.013-1.703-2.782.604-3.369-1.342-3.369-1.342-.454-1.154-1.11-1.462-1.11-1.462-.908-.62.069-.608.069-.608 1.003.07 1.531 1.03 1.531 1.03.892 1.529 2.341 1.087 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.11-4.555-4.943 0-1.091.39-1.984 1.029-2.683-.103-.253-.446-1.27.098-2.647 0 0 .84-.269 2.75 1.025A9.578 9.578 0 0 1 12 6.836a9.59 9.59 0 0 1 2.504.337c1.909-1.294 2.747-1.025 2.747-1.025.546 1.377.202 2.394.1 2.647.64.699 1.028 1.592 1.028 2.683 0 3.842-2.339 4.687-4.566 4.935.359.309.678.919.678 1.852 0 1.336-.012 2.415-.012 2.743 0 .267.18.579.688.481C19.138 20.163 22 16.418 22 12c0-5.523-4.477-10-10-10z"/>
-            </svg>
-            <span class="contact-link-text">github.com/zach-mn</span>
-            <svg class="contact-arrow" width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+            <p>
+              This site — hand&#8209;tuned HTML, CSS, and JavaScript with no
+              frameworks, designed and built with Claude Code and hosted
+              on GitHub Pages.
+            </p>
+            <ul class="tags" aria-label="Technologies">
+              <li>HTML</li><li>CSS</li><li>JavaScript</li>
+            </ul>
+          </div>
+          <a class="project-meta project-link" href="https://github.com/zach-mn/zach-mn.github.io" target="_blank" rel="noopener">
+            View source
+            <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
           </a>
-        </div>
+        </li>
+
+      </ul>
+    </section>
+
+    <!-- ── Contact ── -->
+    <section id="contact" class="section contact">
+      <div class="section-head" data-reveal>
+        <span class="section-num">03</span>
+        <h2>Contact</h2>
       </div>
-    </div>
-  </section>
+      <p class="contact-lede" data-reveal style="--rd: 0.08s">
+        Have an idea or a question?<br />
+        <em>Let's build something.</em>
+      </p>
+      <div data-reveal style="--rd: 0.16s">
+        <a class="btn btn-solid" href="https://github.com/zach-mn" target="_blank" rel="noopener">
+          Find me on GitHub
+          <svg width="13" height="13" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><line x1="7" y1="17" x2="17" y2="7"/><polyline points="7 7 17 7 17 17"/></svg>
+        </a>
+      </div>
+    </section>
+
+  </main>
 
   <!-- ── Footer ── -->
-  <footer>
-    <div class="footer-watermark" aria-hidden="true">zachmn</div>
+  <footer class="site-footer">
     <div class="footer-inner">
-      <p>&copy; 2026 Zach. Built with good vibes.</p>
-      <a href="#hero" class="back-to-top" data-magnetic>
-        Back to top
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
-      </a>
+      <p>&copy; <span id="year">2026</span> Zach · Built with Claude Code</p>
+      <a href="#top" class="back-to-top">Back to top ↑</a>
     </div>
   </footer>
 
