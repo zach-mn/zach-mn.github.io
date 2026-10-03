@@ -42,4 +42,9 @@ then open http://localhost:8000. Check the mobile layout at < 720px width (menu 
 
 ## Workflow
 
-Commit directly to `main` (it's a personal site) unless asked otherwise; one focused commit per change with a descriptive message. Confirm before pushing — pushing publishes to zachmn.com.
+`main` is the live site — anything that lands there is on zachmn.com within a minute — so never commit to or push `main` directly.
+
+1. Branch off an up-to-date `main` (short descriptive name, e.g. `tagline-public-data`), one focused commit per change with a descriptive message.
+2. Push the branch and open a PR with `gh pr create`. For wording that describes private projects, show Zach the text before opening the PR.
+3. Zach reviews and merges (on GitHub, or by telling Claude "merge it" → `gh pr merge --merge`).
+4. After a merge: `git switch main`, `git pull`, `git branch -d <branch>`, `git fetch --prune`, then confirm the Pages deploy succeeded (`gh run list -L1`) and the change is live on zachmn.com. GitHub auto-deletes the remote branch on merge.
