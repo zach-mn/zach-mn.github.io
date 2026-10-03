@@ -38,7 +38,7 @@ then open http://localhost:8000. Check the mobile layout at < 720px width (menu 
 
 - **Encoding:** keep all files UTF-8 (no BOM), LF line endings. A past commit (1cd2f0a) had to fix mojibake in CSS comments caused by an encoding mishap — on Windows, never write files with PowerShell `Set-Content`/`Out-File` defaults; use the Edit/Write tools. The box-drawing characters in comments (`──`, `═══`) and em dashes are the first things that break.
 - **Mobile menu stacking:** many past commits fought z-index/stacking-context bugs with the full-screen mobile menu. The `.nav-links` overlay is `position: fixed` inside the sticky header; don't add `transform`, `filter`, or `opacity` < 1 to ancestors of `.nav-links` (it creates a containing block and traps the overlay). The header's `backdrop-filter` is fine on desktop but test the menu on mobile after any header change.
-- `[data-reveal]` elements start at `opacity: 0` and depend on `script.js` to become visible.
+- `[data-reveal]` elements are only hidden (pre-animation) when `<html>` has the `js` class, added by an inline script in `<head>`. Keep that gating so the page stays readable if `script.js` fails.
 
 ## Workflow
 
